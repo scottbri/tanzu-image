@@ -1,2 +1,2 @@
-tanzu/
 temp-installer/
+**/tanzu-cli-bundle*

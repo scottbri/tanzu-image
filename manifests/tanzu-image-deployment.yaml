@@ -1,0 +1,40 @@
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: tanzu-image
+#spec:
+#  containers:
+#  - name: tanzu-image
+#    image: harbor.tanzu.bekind.io/demoapps/tanzu-image:latest
+#    args:
+#    - sleep
+#    - "1000000"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tanzu-image
+  labels:
+    app: tanzu-image
+spec:
+  selector:
+    matchLabels:
+      app: tanzu-image
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tanzu-image
+    spec:
+      volumes:
+      - name: acmefit-catalog-data
+        emptyDir: {}
+      containers:
+      - image: harbor.tanzu.bekind.io/demoapps/tanzu-image:latest
+        imagePullPolicy: "Always"
+        name: tanzu
+        args:
+        - sleep
+        - "1000000"

@@ -1,4 +1,4 @@
 VERSION="`cat Version`"
 
-docker build -t harbor.lab.bekind.io/tanzu-image/tanzu-image:latest -t harbor.lab.bekind.io/tanzu-image/tanzu-image:${VERSION} .
+docker build -t harbor.tanzu.bekind.io/demoapps/tanzu-image:latest -t harbor.tanzu.bekind.io/demoapps/tanzu-image:${VERSION} .
 

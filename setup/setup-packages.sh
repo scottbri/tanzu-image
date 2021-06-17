@@ -1,2 +1,2 @@
 apt-get update
-apt-get install wget curl git vim docker -y
+apt-get install wget curl git vim -y
