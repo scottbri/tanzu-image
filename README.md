@@ -1,4 +1,4 @@
-# tanzu-image
+jj# tanzu-image
  Build a Tanzu CLI container for managing VMware Tanzu kubernetes clusters
 
 ## CAUTION
@@ -9,6 +9,13 @@ Grab the bits
 ```bash
 git clone https://github.com/scottbri/tanzu-image
 cd tanzu-image
+```
+
+Go get the Tanzu CLI bundle for Linux from my.vmware.com.  
+Tanzu CLI version 1.3.1 is available here...https://my.vmware.com/en/web/vmware/downloads/details?downloadGroup=TKG-131&productId=988&rPId=65946.  
+The goal is to place the tar file tanzu-cli-bundle-<YOUR_VERSION>-linux-amd64.tar into the ./setup-tanzu-cli/ folder.  DO NOT extract the tar.  The container build script will do that.
+```bash
+cp ~/Downloads/tanzu-cli-bundle-<YOUR_VERSION>-linux-amd64.tar/ ./setup-tanzu-cli/
 ```
 
 Edit your container registry entries and image tags to pull / push to your target registry
