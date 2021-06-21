@@ -13,26 +13,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tanzu-image
+  name: tanzu-shell
   labels:
-    app: tanzu-image
+    app: tanzu-shell
 spec:
   selector:
     matchLabels:
-      app: tanzu-image
+      app: tanzu-shell
   strategy:
     type: Recreate
   replicas: 1
   template:
     metadata:
       labels:
-        app: tanzu-image
+        app: tanzu-shell
     spec:
       volumes:
       - name: acmefit-catalog-data
         emptyDir: {}
       containers:
-      - image: harbor.tanzu.bekind.io/demoapps/tanzu-image:latest
+      - image: harbor.tanzu.bekind.io/demoapps/tanzu-shell:latest
         imagePullPolicy: "Always"
         name: tanzu
         args:

@@ -1,13 +1,11 @@
-FROM harbor.tanzu.bekind.io/hub/library/ubuntu:latest AS build
+FROM harbor.tanzu.bekind.io/hub/library/photon:latest AS build
 
 COPY ./setup-tanzu-cli /setup-tanzu-cli
 RUN /setup-tanzu-cli/setup-tanzu-cli.sh
 
-FROM harbor.tanzu.bekind.io/hub/library/ubuntu:latest as run
-RUN apt-get update && \
-    apt-get install wget curl git vim -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/
+FROM harbor.tanzu.bekind.io/hub/library/photon:latest as run
+RUN yum install wget curl git vim -y 
+
 RUN useradd -m tanzu
 
 COPY --from=build /root/ /home/tanzu/
