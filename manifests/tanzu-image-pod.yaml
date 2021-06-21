@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tanzu-image
+  name: tanzu-shell
 spec:
   containers:
-  - name: tanzu-image
-    image: harbor.tanzu.bekind.io/demoapps/tanzu-image:latest
+  - name: tanzu-shell
+    image: harbor.tanzu.bekind.io/demoapps/tanzu-shell:latest
     args:
     - sleep
     - "1000000"
