@@ -36,7 +36,7 @@ RUN $INSTALLDIR/tanzu plugin install --local cli all
 ###########################################
 
 FROM harbor.tanzu.bekind.io/hub/library/photon:latest as run
-RUN tdnf install -y wget vim shadow git
+RUN tdnf install -y wget vim shadow git tmux
 
 RUN useradd -m tanzu
 USER tanzu
