@@ -1,7 +1,7 @@
 FROM harbor.tanzu.bekind.io/hub/library/photon:latest
 
 ## setup the tanzu user to get all the right permissions
-RUN tdnf install -y  wget vim shadow git tmux
+RUN tdnf install -y wget vim shadow git tmux docker-cli bindutils
 RUN useradd -m tanzu
 USER tanzu
 

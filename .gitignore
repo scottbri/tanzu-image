@@ -2,3 +2,4 @@ temp-installer/
 **/tanzu-cli-bundle*
 tanzu/
 tanzu-cli.tar.gz
+temp/
