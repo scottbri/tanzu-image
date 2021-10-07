@@ -7,6 +7,6 @@ USER tanzu
 
 ## extract tanzu cli bundle from bucket
 WORKDIR /home/tanzu
-RUN wget -O - https://public-personal-file-store.s3.amazonaws.com/tanzu-cli_v1.3.1b.tar.gz | tar zxvf -
+RUN wget -O - https://public-personal-file-store.s3.amazonaws.com/tkg-image_v1.3.1c.tar.gz | tar zxvf -
 
 CMD ["bash"]
