@@ -1,5 +1,6 @@
 temp-installer/
 **/tanzu-cli-bundle*
 tanzu/
+image/
 *.tar.gz
 temp/
